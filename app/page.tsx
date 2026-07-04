@@ -11,6 +11,12 @@ const milestones = [
   ["2026", "Sony Women in Technology Award with Nature に参加"],
 ];
 
+const highlights = [
+  { value: "全国2位", label: "クラシックバレエ", detail: "国際ダンスコンペティション" },
+  { value: "全国大会出場", label: "ソフトボール", detail: "千葉県代表選手として出場" },
+  { value: "世界大会出場", label: "CanSat", detail: "缶サット甲子園で全国優勝、日本代表としてスペインへ" },
+];
+
 const strengths = [
   { no: "01", title: "研究への原点", body: "身近な家族が生活習慣病で自由を失っていく姿から、発症後の治療だけでなく、未病の段階で防ぐ仕組みに関心を持ちました。" },
   { no: "02", title: "探究するテーマ", body: "腸内細菌・医療AI・量子コンピューティングを横断し、一人ひとりに合った予防と治療の選択肢を導く研究を目指します。" },
@@ -36,7 +42,19 @@ export default function Home() {
       </Container></Box>
 
       <Box id="journey" py={{ base: 16, md: 24 }}><Container maxW="6xl"><Grid templateColumns={{ base: "1fr", md: ".65fr 1.35fr" }} gap={{ base: 10, md: 20 }}><Box><Text color="rose.700" fontSize="sm">02 / JOURNEY</Text><Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">好奇心を、<br />行動に変える。</Heading><Text mt={6} color="gray.600" lineHeight="1.9">分野を越えて挑戦してきた経験が、研究を続ける粘り強さと国際的な視野の土台です。</Text></Box><Stack spacing={0}>{milestones.map(([year, text]) => <Grid key={year + text} templateColumns="70px 1fr" gap={5} py={6} borderBottom="1px solid" borderColor="rose.200"><Text color="rose.700" fontWeight="bold">{year}</Text><Text lineHeight="1.8">{text}</Text></Grid>)}</Stack></Grid>
-        <SimpleGrid columns={{ base: 1, sm: 3 }} mt={{ base: 14, md: 20 }} gap={5}>{[["全国2位", "クラシックバレエ"],["全国大会", "ソフトボール出場"],["世界大会", "CanSat 日本代表"]].map(([value,label]) => <Box key={label} bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" p={7}><Text fontFamily="heading" fontSize="3xl" color="rose.700">{value}</Text><Text mt={2} color="gray.600">{label}</Text></Box>)}</SimpleGrid>
+        <Box mt={{ base: 14, md: 20 }}>
+          <Flex align="end" justify="space-between" gap={4} mb={6}>
+            <Box><Text color="rose.700" fontSize="sm">SELECTED HIGHLIGHTS</Text><Heading mt={2} fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">主な実績</Heading></Box>
+            <Text color="gray.500" fontSize="sm">{String(highlights.length).padStart(2, "0")} records</Text>
+          </Flex>
+          <Stack spacing={0} borderTop="1px solid" borderColor="rose.200">
+            {highlights.map((item, index) => <Grid key={item.label} templateColumns={{ base: "44px 1fr", md: "70px 220px 1fr" }} gap={{ base: 3, md: 7 }} alignItems="center" py={{ base: 6, md: 7 }} borderBottom="1px solid" borderColor="rose.200">
+              <Text color="rose.500" fontSize="sm">{String(index + 1).padStart(2, "0")}</Text>
+              <Box><Text fontFamily="heading" fontSize={{ base: "2xl", md: "3xl" }} color="rose.700">{item.value}</Text><Text display={{ md: "none" }} mt={1} fontWeight="bold">{item.label}</Text></Box>
+              <Box gridColumn={{ base: "2", md: "auto" }}><Text display={{ base: "none", md: "block" }} fontWeight="bold">{item.label}</Text><Text mt={{ base: 0, md: 2 }} color="gray.600" lineHeight="1.8">{item.detail}</Text></Box>
+            </Grid>)}
+          </Stack>
+        </Box>
       </Container></Box>
 
       <Box bg="#35453c" color="white" py={{ base: 16, md: 24 }}><Container maxW="6xl"><Text color="rose.200" fontSize="sm">03 / NEXT</Text><Heading mt={4} maxW="760px" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.5" fontWeight="500">世界で通用する専門性を、<br />人の健康に届く価値へ。</Heading><SimpleGrid columns={{ base: 1, md: 3 }} gap={8} mt={12}>{[["学部", "医療AIの基礎を固め、腸内細菌画像の解析と国内学会発表へ。"],["修士", "国際会議・論文発表に挑み、Johns Hopkins Universityでの研究を目指す。"],["その先", "健康寿命の分野で国境を越えて共同研究し、社会に届く成果を生み出す。"]].map(([title,body]) => <Box key={title} borderTop="1px solid" borderColor="whiteAlpha.400" pt={6}><Text color="rose.200" fontWeight="bold">{title}</Text><Text mt={4} color="whiteAlpha.800" lineHeight="1.9">{body}</Text></Box>)}</SimpleGrid></Container></Box>
