@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowForwardIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { Badge, Box, Button, Container, Flex, Grid, GridItem, Heading, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 
 const milestones = [
@@ -15,6 +15,48 @@ const highlights = [
   { value: "全国2位", label: "クラシックバレエ", detail: "国際ダンスコンペティション" },
   { value: "全国大会出場", label: "ソフトボール", detail: "千葉県代表選手として出場" },
   { value: "世界大会出場", label: "CanSat", detail: "缶サット甲子園で全国優勝、日本代表としてスペインへ" },
+];
+
+const allHighlights = [
+  ...highlights,
+  { value: "Crew Battle 優勝", label: "ストリートダンス", detail: "ユニタレ DANCE TRACKS vol.2" },
+];
+
+const highlightLinks = [
+  [{ label: "大会結果", url: "https://ballet-search.com/2021/11/23/toyama-dance2021/" }],
+  [],
+  [
+    { label: "世界大会公式サイト", url: "https://cansatcompetition.com/" },
+    { label: "全国優勝・世界大会出場の記事", url: "https://rarea.events/event/190208" },
+  ],
+  [],
+];
+
+const featuredStories = [
+  {
+    year: "2022",
+    type: "INTERVIEW",
+    title: "高校時代の在校生インタビュー",
+    description: "法政二高での学校生活と、生徒主体の環境について語ったインタビュー。",
+    links: [{ label: "インタビューを読む", url: "https://hosei2.ed.jp/now/319/2022_05_31_2" }],
+  },
+  {
+    year: "2024-2026",
+    type: "ACTIVITY",
+    title: "SONY STEAM GIRLS EXPERIENCE",
+    description: "一期生として参加したSTEAM分野での学びと活動。",
+    links: [
+      { label: "活動紹介", url: "https://hosei2.ed.jp/now/319/3998" },
+      { label: "法政大学掲載記事", url: "https://www.hosei.ac.jp/diversity/info/article-20260624130223/" },
+    ],
+  },
+  {
+    year: "2025",
+    type: "TALK",
+    title: "HOSEIミュージアム 対談",
+    description: "これまでの挑戦や大学での活動を振り返る対談映像。",
+    links: [{ label: "YouTubeで視聴", url: "https://www.youtube.com/watch?v=ntC2RwkO6Tc" }],
+  },
 ];
 
 const strengths = [
@@ -45,15 +87,28 @@ export default function Home() {
         <Box mt={{ base: 14, md: 20 }}>
           <Flex align="end" justify="space-between" gap={4} mb={6}>
             <Box><Text color="rose.700" fontSize="sm">SELECTED HIGHLIGHTS</Text><Heading mt={2} fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">主な実績</Heading></Box>
-            <Text color="gray.500" fontSize="sm">{String(highlights.length).padStart(2, "0")} records</Text>
+            <Text color="gray.500" fontSize="sm">{String(allHighlights.length).padStart(2, "0")} records</Text>
           </Flex>
           <Stack spacing={0} borderTop="1px solid" borderColor="rose.200">
-            {highlights.map((item, index) => <Grid key={item.label} templateColumns={{ base: "44px 1fr", md: "70px 220px 1fr" }} gap={{ base: 3, md: 7 }} alignItems="center" py={{ base: 6, md: 7 }} borderBottom="1px solid" borderColor="rose.200">
+            {allHighlights.map((item, index) => <Grid key={item.label} templateColumns={{ base: "44px 1fr", md: "70px 220px 1fr" }} gap={{ base: 3, md: 7 }} alignItems="center" py={{ base: 6, md: 7 }} borderBottom="1px solid" borderColor="rose.200">
               <Text color="rose.500" fontSize="sm">{String(index + 1).padStart(2, "0")}</Text>
               <Box><Text fontFamily="heading" fontSize={{ base: "2xl", md: "3xl" }} color="rose.700">{item.value}</Text><Text display={{ md: "none" }} mt={1} fontWeight="bold">{item.label}</Text></Box>
-              <Box gridColumn={{ base: "2", md: "auto" }}><Text display={{ base: "none", md: "block" }} fontWeight="bold">{item.label}</Text><Text mt={{ base: 0, md: 2 }} color="gray.600" lineHeight="1.8">{item.detail}</Text></Box>
+              <Box gridColumn={{ base: "2", md: "auto" }}><Text display={{ base: "none", md: "block" }} fontWeight="bold">{item.label}</Text><Text mt={{ base: 0, md: 2 }} color="gray.600" lineHeight="1.8">{item.detail}</Text>{highlightLinks[index]?.length > 0 && <HStack mt={3} spacing={4} flexWrap="wrap">{highlightLinks[index].map((link) => <Link key={link.url} href={link.url} isExternal color="rose.700" fontSize="sm" fontWeight="bold">{link.label} <ExternalLinkIcon mx="2px" /></Link>)}</HStack>}</Box>
             </Grid>)}
           </Stack>
+        </Box>
+
+        <Box mt={{ base: 16, md: 24 }}>
+          <Text color="rose.700" fontSize="sm">FEATURED STORIES</Text>
+          <Heading mt={2} fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">インタビュー・掲載</Heading>
+          <SimpleGrid columns={{ base: 1, md: 3 }} gap={5} mt={8}>
+            {featuredStories.map((story) => <Box key={story.title} bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" p={{ base: 6, md: 7 }} display="flex" flexDirection="column">
+              <Flex justify="space-between" gap={3}><Text color="rose.700" fontSize="xs" fontWeight="bold" letterSpacing=".12em">{story.type}</Text><Text color="gray.500" fontSize="sm">{story.year}</Text></Flex>
+              <Heading as="h3" mt={5} fontSize="xl" fontWeight="500" lineHeight="1.6">{story.title}</Heading>
+              <Text mt={3} color="gray.600" lineHeight="1.8" flex="1">{story.description}</Text>
+              <Stack mt={6} spacing={2}>{story.links.map((link) => <Link key={link.url} href={link.url} isExternal color="rose.700" fontSize="sm" fontWeight="bold">{link.label} <ExternalLinkIcon mx="2px" /></Link>)}</Stack>
+            </Box>)}
+          </SimpleGrid>
         </Box>
       </Container></Box>
 
