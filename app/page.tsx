@@ -85,7 +85,7 @@ const strengths = [
 export default function Home() {
   return <Box bg="#fffafb">
     <Box as="header" borderBottom="1px solid" borderColor="rose.100" bg="rgba(255,250,251,.9)" position="sticky" top="0" zIndex="10" backdropFilter="blur(12px)">
-      <Container maxW="6xl"><Flex h="68px" align="center" justify="space-between"><Text fontFamily="heading" fontSize="lg">Misato Hayashi</Text><HStack spacing={{ base: 3, md: 7 }} fontSize="sm"><Link href="#research">Research</Link><Link href="#journey">Journey</Link></HStack></Flex></Container>
+      <Container maxW="6xl"><Flex h="68px" align="center" justify="space-between"><Text fontFamily="heading" fontSize="lg">Misato Hayashi</Text><HStack spacing={{ base: 3, md: 7 }} fontSize="sm"><Link href="#research">Research</Link><Link href="#journey">Journey</Link><Link href="#now">Now</Link></HStack></Flex></Container>
     </Box>
 
     <Box as="main">
@@ -130,7 +130,27 @@ export default function Home() {
         </Box>
       </Container></Box>
 
-      <Box bg="#35453c" color="white" py={{ base: 16, md: 24 }}><Container maxW="6xl"><Text color="rose.200" fontSize="sm">03 / FUTURE</Text><Badge mt={4} bg="whiteAlpha.200" color="rose.100" px={3} py={1}>これから実現したいこと</Badge><Heading mt={5} maxW="760px" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.5" fontWeight="500">世界で通用する専門性を、<br />人の健康に届く価値へ。</Heading><SimpleGrid columns={{ base: 1, md: 3 }} gap={8} mt={12}>{[["学部", "医療AIの基礎を固め、腸内細菌画像の解析と国内学会発表へ。"],["大学院", "国際会議・論文発表に挑み、ドイツ人工知能研究センター（DFKI）で研究する。"],["その先", "健康寿命の分野で国境を越えて共同研究し、社会に届く成果を生み出す。"]].map(([title,body]) => <Box key={title} borderTop="1px solid" borderColor="whiteAlpha.400" pt={6}><Text color="rose.200" fontWeight="bold">{title}</Text><Text mt={4} color="whiteAlpha.800" lineHeight="1.9">{body}</Text></Box>)}</SimpleGrid></Container></Box>
+      <Box id="now" bg="white" borderTop="1px solid" borderColor="rose.100" py={{ base: 16, md: 24 }}><Container maxW="6xl">
+        <Text color="rose.700" fontSize="sm">03 / NOW</Text>
+        <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">今、頑張っていること。</Heading>
+        <Text mt={5} maxW="680px" color="gray.600" lineHeight="1.9">研究に向かう時間も、好きなことに夢中になる時間も、どちらも私らしさをつくる大切な日々です。</Text>
+        <SimpleGrid columns={{ base: 1, lg: 2 }} gap={{ base: 16, lg: 14 }} mt={{ base: 12, md: 16 }}>
+          <Box>
+            <Grid templateColumns=".72fr 1.28fr" gap={3} alignItems="end"><Box position="relative" aspectRatio={3 / 4} overflow="hidden" borderRadius="6px"><Image src="/photos/now-presentation.webp" alt="SGXの母校訪問で発表する様子" fill sizes="(max-width: 992px) 38vw, 18vw" style={{ objectFit: "cover" }} /></Box><Box position="relative" aspectRatio={4 / 3} overflow="hidden" borderRadius="6px"><Image src="/photos/now-sgx-team.webp" alt="SGXの母校訪問に参加したメンバー" fill sizes="(max-width: 992px) 58vw, 28vw" style={{ objectFit: "cover" }} /></Box></Grid>
+            <Text mt={7} color="sage" fontSize="xs" fontWeight="bold" letterSpacing=".14em">STUDY & ACTIVITY</Text>
+            <Heading as="h3" mt={3} fontSize="2xl" fontWeight="500">学びを深め、言葉にして届ける</Heading>
+            <Text mt={4} color="gray.600" lineHeight="1.9">医療AI・統計・機械学習の基礎と英語論文の読解に取り組んでいます。SGXの母校訪問では、自分の経験を後輩へ伝えることにも挑戦しました。</Text>
+          </Box>
+          <Box>
+            <Grid templateColumns="1.18fr .82fr" gap={3} alignItems="start"><Box position="relative" aspectRatio={4 / 3} overflow="hidden" borderRadius="6px"><Image src="/photos/now-latte.webp" alt="ラテアートと彩り豊かなサラダ" fill sizes="(max-width: 992px) 58vw, 28vw" style={{ objectFit: "cover" }} /></Box><Box position="relative" aspectRatio={3 / 4} overflow="hidden" borderRadius="6px"><Image src="/photos/now-dance.webp" alt="crew battleで優勝したダンスメンバー" fill sizes="(max-width: 992px) 38vw, 18vw" style={{ objectFit: "cover" }} /></Box></Grid>
+            <Text mt={7} color="rose.700" fontSize="xs" fontWeight="bold" letterSpacing=".14em">LIFE & FAVORITES</Text>
+            <Heading as="h3" mt={3} fontSize="2xl" fontWeight="500">小さな「できた」を楽しむ</Heading>
+            <Text mt={4} color="gray.600" lineHeight="1.9">ラテアートは、きれいな一杯を描けるよう練習中。ダンスでは仲間とcrew battle優勝を喜びました。おいしく食べること、身体を動かすことも、健やかに研究を続けるための大切な習慣です。</Text>
+          </Box>
+        </SimpleGrid>
+      </Container></Box>
+
+      <Box bg="#35453c" color="white" py={{ base: 16, md: 24 }}><Container maxW="6xl"><Text color="rose.200" fontSize="sm">04 / FUTURE</Text><Badge mt={4} bg="whiteAlpha.200" color="rose.100" px={3} py={1}>これから実現したいこと</Badge><Heading mt={5} maxW="760px" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.5" fontWeight="500">世界で通用する専門性を、<br />人の健康に届く価値へ。</Heading><SimpleGrid columns={{ base: 1, md: 3 }} gap={8} mt={12}>{[["学部", "医療AIの基礎を固め、腸内細菌画像の解析と国内学会発表へ。"],["大学院", "国際会議・論文発表に挑み、ドイツ人工知能研究センター（DFKI）で研究する。"],["その先", "健康寿命の分野で国境を越えて共同研究し、社会に届く成果を生み出す。"]].map(([title,body]) => <Box key={title} borderTop="1px solid" borderColor="whiteAlpha.400" pt={6}><Text color="rose.200" fontWeight="bold">{title}</Text><Text mt={4} color="whiteAlpha.800" lineHeight="1.9">{body}</Text></Box>)}</SimpleGrid></Container></Box>
     </Box>
 
     <Box as="footer" bg="white" py={10}><Container maxW="6xl"><Flex direction={{ base: "column", sm: "row" }} gap={3} justify="space-between"><Text fontFamily="heading">Misato Hayashi</Text><Text color="gray.500" fontSize="sm">Research Portfolio</Text></Flex></Container></Box>
