@@ -62,9 +62,10 @@ const featuredStories = [
     year: "2024-2026",
     type: "ACTIVITY",
     title: "SONY STEAM GIRLS EXPERIENCE",
-    description: "一期生として参加したSTEAM分野での学びと活動。",
+    description: "理工系女子学生への奨学金支援と、次世代へSTEAMの楽しさをつなぐバトンプログラム。一期生として活動しています。",
     thumbnail: undefined,
     links: [
+      { label: "SGX公式サイト", url: "https://www.sony.com/ja/SonyInfo/diversity/steam-ex/" },
       { label: "活動紹介", url: "https://hosei2.ed.jp/now/319/3998" },
       { label: "法政大学掲載記事", url: "https://www.hosei.ac.jp/diversity/info/article-20260624130223/" },
     ],
@@ -96,8 +97,8 @@ export default function Home() {
     <Box as="main">
       <Container maxW="6xl" pt={{ base: 16, md: 24 }} pb={{ base: 20, md: 28 }}>
         <Grid templateColumns={{ base: "1fr", lg: "1.4fr .6fr" }} gap={{ base: 12, lg: 16 }} alignItems="end">
-          <GridItem><Box borderBottom="1px solid" borderColor="rose.200" pb={6} mb={6}><Heading as="p" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">林 美聡 <Box as="span" color="rose.700" fontSize={{ base: "lg", md: "xl" }}>/ Misato Hayashi</Box></Heading><Text mt={3} color="gray.600" lineHeight="1.9">2005年12月21日生まれ（20歳）<br />法政大学第二高等学校 出身<br />法政大学 理工学部 応用情報工学科 B3 / 彌冨研究室</Text></Box><Text color="rose.700" fontSize="sm" letterSpacing=".16em" textTransform="uppercase">Medical AI / Gut Microbiome / Quantum Computing</Text><Heading as="h1" mt={6} fontSize={{ base: "4xl", md: "6xl" }} lineHeight="1.35" fontWeight="500">健康でいられる時間を、<br /><Box as="span" color="rose.700">研究の力で伸ばしたい。</Box></Heading><Text mt={8} maxW="650px" fontSize={{ base: "md", md: "lg" }} lineHeight="2" color="gray.700">腸内細菌を起点に、医療AIと量子コンピューティングの可能性を探究しています。目指すのは、病気になってから治すだけでなく、一人ひとりの未来を未病の段階から支えることです。</Text><Button as={Link} href="#research" mt={9} rightIcon={<ArrowForwardIcon />} bg="rose.700" color="white" _hover={{ bg: "rose.500", textDecoration: "none" }}>研究テーマを見る</Button></GridItem>
-          <GridItem><Box borderLeft="1px solid" borderColor="rose.200" pl={7} py={2}><Text fontSize="sm" color="gray.500">Vision</Text><Text mt={3} fontFamily="heading" fontSize="2xl" lineHeight="1.7">幸せなおばあちゃんになる。</Text><Text mt={3} color="gray.600" lineHeight="1.8">健康寿命と海外での挑戦。個人的な夢を、社会へ返せる研究に変えていきます。</Text></Box></GridItem>
+          <GridItem><Box borderBottom="1px solid" borderColor="rose.200" pb={6} mb={6}><Heading as="p" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">林 美聡 <Box as="span" color="rose.700" fontSize={{ base: "lg", md: "xl" }}>/ Misato Hayashi</Box></Heading><Text mt={3} color="gray.600" lineHeight="1.9">2005年12月21日生まれ（20歳）<br />法政大学第二高等学校 出身<br />法政大学 理工学部 応用情報工学科 B3 / 彌冨研究室<br />法政大学 小金井キャンパス<br />〒184-8584 東京都小金井市梶野町3-7-2</Text></Box><Text color="rose.700" fontSize="sm" letterSpacing=".16em" textTransform="uppercase">Medical AI / Gut Microbiome / Quantum Computing</Text><Heading as="h1" mt={6} fontSize={{ base: "4xl", md: "6xl" }} lineHeight="1.35" fontWeight="500">健康でいられる時間を、<br /><Box as="span" color="rose.700">研究の力で伸ばしたい。</Box></Heading><Text mt={8} maxW="650px" fontSize={{ base: "md", md: "lg" }} lineHeight="2" color="gray.700">腸内細菌を起点に、医療AIと量子コンピューティングの可能性を探究しています。目指すのは、病気になってから治すだけでなく、一人ひとりの未来を未病の段階から支えることです。</Text><Button as={Link} href="#research" mt={9} rightIcon={<ArrowForwardIcon />} bg="rose.700" color="white" _hover={{ bg: "rose.500", textDecoration: "none" }}>研究テーマを見る</Button></GridItem>
+          <GridItem maxW={{ base: "340px", lg: "none" }} mx={{ base: "auto", lg: 0 }}><Box position="relative" aspectRatio={4 / 5} overflow="hidden" borderRadius="6px" mb={7} bg="rose.100"><Image src={assetPath("/photos/profile-misato.webp")} alt="着物姿の林美聡" fill priority sizes="(max-width: 992px) 340px, 28vw" style={{ objectFit: "cover", objectPosition: "center top" }} /></Box><Box borderLeft="1px solid" borderColor="rose.200" pl={7} py={2}><Text fontSize="sm" color="gray.500">Vision</Text><Text mt={3} fontFamily="heading" fontSize="2xl" lineHeight="1.7">幸せなおばあちゃんになる。</Text><Text mt={3} color="gray.600" lineHeight="1.8">健康寿命と海外での挑戦。個人的な夢を、社会へ返せる研究に変えていきます。</Text></Box></GridItem>
         </Grid>
       </Container>
 
@@ -158,7 +159,7 @@ export default function Home() {
             <Text mt={4} color="gray.600" lineHeight="1.9">医療AI・統計・機械学習の基礎と英語論文の読解に取り組んでいます。SGXの母校訪問では、自分の経験を後輩へ伝えることにも挑戦しました。</Text>
           </Box>
           <Box>
-            <Grid templateColumns="1.18fr .82fr" gap={3} alignItems="start"><Box position="relative" aspectRatio={4 / 3} overflow="hidden" borderRadius="6px"><Image src={assetPath("/photos/now-latte.webp")} alt="ラテアートと彩り豊かなサラダ" fill sizes="(max-width: 992px) 58vw, 28vw" style={{ objectFit: "cover" }} /></Box><Box position="relative" aspectRatio={3 / 4} overflow="hidden" borderRadius="6px"><Image src={assetPath("/photos/now-dance.webp")} alt="crew battleで優勝したダンスメンバー" fill sizes="(max-width: 992px) 38vw, 18vw" style={{ objectFit: "cover" }} /></Box></Grid>
+            <Grid templateColumns="1.18fr .82fr" templateRows="1fr 1fr" gap={3} h={{ base: "330px", sm: "400px" }}><Box position="relative" gridRow="1 / span 2" overflow="hidden" borderRadius="6px"><Image src={assetPath("/photos/now-latte.webp")} alt="ラテアートと彩り豊かなサラダ" fill sizes="(max-width: 992px) 58vw, 28vw" style={{ objectFit: "cover" }} /></Box><Box position="relative" overflow="hidden" borderRadius="6px"><Image src={assetPath("/photos/now-dance.webp")} alt="crew battleで優勝したダンスメンバー" fill sizes="(max-width: 992px) 38vw, 18vw" style={{ objectFit: "cover" }} /></Box><Box position="relative" overflow="hidden" borderRadius="6px"><Image src={assetPath("/photos/korea-dance.webp")} alt="韓国のダンススタジオでレッスンを受けた時の写真" fill sizes="(max-width: 992px) 38vw, 18vw" style={{ objectFit: "cover", objectPosition: "center 35%" }} /></Box></Grid>
             <Text mt={7} color="rose.700" fontSize="xs" fontWeight="bold" letterSpacing=".14em">LIFE & FAVORITES</Text>
             <Heading as="h3" mt={3} fontSize="2xl" fontWeight="500">小さな「できた」を楽しむ</Heading>
             <Text mt={4} color="gray.600" lineHeight="1.9">ラテアートは、きれいな一杯を描けるよう練習中。ダンスでは仲間とcrew battle優勝を喜び、もっと学びたいと思ったら韓国までレッスンを受けに行きます。好奇心を行動に変えることは、研究でも日常でも変わりません。</Text>
