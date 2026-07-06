@@ -2,6 +2,7 @@
 
 import { ArrowForwardIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { Badge, Box, Button, Container, Flex, Grid, GridItem, Heading, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import Image from "next/image";
 
 const milestones = [
   ["2023", "缶サット甲子園 全国優勝・世界大会へ日本代表として出場"],
@@ -9,6 +10,22 @@ const milestones = [
   ["2024", "BitaP株式会社で腸内環境と実社会をつなぐ発信を開始"],
   ["2025", "SKS JAPAN、メタジェン勉強会・交流イベントに参加"],
   ["2026", "Sony Women in Technology Award with Nature に参加"],
+];
+
+const storyTimeline = [
+  { year: "2021", title: "舞台で培った継続力", body: "3歳から続けたクラシックバレエで、富山国際ダンスコンペティション クラシックC部門第2位。", tag: "実績" },
+  { year: "2022", title: "関心を言葉にする", body: "IBM量子サマーキャンプ一期生として学び、高校生活についての在校生インタビューも公開。", tag: "実績" },
+  { year: "2023", title: "日本代表として世界へ", body: "缶サット甲子園で全国優勝。日本代表としてスペインの世界大会に出場し、各国の仲間と出会う。", tag: "実績" },
+  { year: "2024", title: "研究と社会をつなぎ始める", body: "SONY STEAM GIRLS EXPERIENCE一期生として活動。BitaP株式会社では、腸内環境に関する発信を実社会へ届ける。", tag: "実績" },
+  { year: "2025", title: "腸内細菌への探究を深める", body: "SKS JAPANやメタジェンの勉強会・交流会に参加。HOSEIミュージアム対談では、これまでの挑戦を振り返る。", tag: "実績" },
+  { year: "2026", title: "研究者としての未来を描く", body: "Sony Women in Technology Award with Natureに参加。医療AIと腸内細菌を軸に、研究テーマを具体化している。", tag: "現在" },
+];
+
+const journeyPhotos = [
+  { src: "/photos/ibm-quantum-camp.webp", alt: "IBM量子サマーキャンプでの記念写真", caption: "IBM Quantum Summer Camp" },
+  { src: "/photos/cansat-world.webp", alt: "CanSat世界大会の参加者集合写真", caption: "CanSat World Competition" },
+  { src: "/photos/sgx-members.webp", alt: "SONY STEAM GIRLS EXPERIENCEのメンバー", caption: "SONY STEAM GIRLS EXPERIENCE" },
+  { src: "/photos/sgx-workshop.webp", alt: "SONY STEAM GIRLS EXPERIENCEの活動風景", caption: "STEAM Workshop" },
 ];
 
 const highlights = [
@@ -83,7 +100,8 @@ export default function Home() {
         <Grid mt={{ base: 14, md: 20 }} templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={{ base: 8, md: 14 }}><Box bg="rose.50" border="1px solid" borderColor="rose.200" borderRadius="8px" p={{ base: 7, md: 10 }}><Badge bg="white" color="rose.700" px={3} py={1}>Research Question</Badge><Heading mt={6} fontSize={{ base: "2xl", md: "3xl" }} lineHeight="1.6" fontWeight="500">腸内環境から、未来の疾病リスクを見つけられるか。</Heading></Box><Stack spacing={6} justify="center"><Text lineHeight="2" color="gray.700">約1,000種類に及ぶ腸内細菌とその変化を捉え、個別最適な治療や予防へつなげるには、膨大なデータから意味あるパターンを見つける必要があります。</Text><Text lineHeight="2" color="gray.700">画像解析や機械学習から着手し、将来は量子コンピューティングも活用しながら、生活習慣病や乳幼児疾患の早期発見に役立つ仕組みへ発展させたいと考えています。</Text></Stack></Grid>
       </Container></Box>
 
-      <Box id="journey" py={{ base: 16, md: 24 }}><Container maxW="6xl"><Grid templateColumns={{ base: "1fr", md: ".65fr 1.35fr" }} gap={{ base: 10, md: 20 }}><Box><Text color="rose.700" fontSize="sm">02 / JOURNEY</Text><Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">好奇心を、<br />行動に変える。</Heading><Text mt={6} color="gray.600" lineHeight="1.9">分野を越えて挑戦してきた経験が、研究を続ける粘り強さと国際的な視野の土台です。</Text></Box><Stack spacing={0}>{milestones.map(([year, text]) => <Grid key={year + text} templateColumns="70px 1fr" gap={5} py={6} borderBottom="1px solid" borderColor="rose.200"><Text color="rose.700" fontWeight="bold">{year}</Text><Text lineHeight="1.8">{text}</Text></Grid>)}</Stack></Grid>
+      <Box id="journey" py={{ base: 16, md: 24 }}><Container maxW="6xl"><Grid templateColumns={{ base: "1fr", md: ".65fr 1.35fr" }} gap={{ base: 10, md: 20 }}><Box><Text color="rose.700" fontSize="sm">02 / PAST & PRESENT</Text><Badge mt={4} bg="rose.100" color="rose.700" px={3} py={1}>これまでの実績</Badge><Heading mt={4} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">好奇心を、<br />行動に変えてきた。</Heading><Text mt={6} color="gray.600" lineHeight="1.9">舞台、ものづくり、海外での出会い。分野を越えた経験が、健康を支える研究へ向かう一本の道になりました。</Text></Box><Stack spacing={0}>{storyTimeline.map((item) => <Grid key={item.year} templateColumns={{ base: "58px 1fr", md: "80px 1fr" }} gap={{ base: 4, md: 6 }} py={7} borderBottom="1px solid" borderColor="rose.200"><Text color="rose.700" fontWeight="bold">{item.year}</Text><Box><HStack spacing={3}><Heading as="h3" fontSize="lg" fontWeight="500">{item.title}</Heading><Badge colorScheme={item.tag === "現在" ? "green" : "pink"} variant="subtle">{item.tag}</Badge></HStack><Text mt={3} color="gray.600" lineHeight="1.8">{item.body}</Text></Box></Grid>)}</Stack></Grid>
+        <Box mt={{ base: 14, md: 20 }}><Flex align="end" justify="space-between" gap={4} mb={6}><Box><Text color="rose.700" fontSize="sm">MOMENTS</Text><Heading mt={2} fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">挑戦を、次の挑戦へ。</Heading></Box><Text display={{ base: "none", md: "block" }} maxW="360px" color="gray.500" fontSize="sm" lineHeight="1.8">量子技術との出会い、世界大会、STEAMで学ぶ仲間。ひとつの経験が、次の好奇心を連れてきました。</Text></Flex><Grid templateColumns={{ base: "1fr 1fr", md: "1fr 1.35fr 1fr 1.35fr" }} gap={3}>{journeyPhotos.map((photo) => <Box key={photo.src}><Box position="relative" aspectRatio={4 / 3} overflow="hidden" borderRadius="6px" bg="rose.100"><Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 768px) 50vw, 25vw" style={{ objectFit: "cover" }} /></Box><Text mt={2} color="gray.500" fontSize="xs">{photo.caption}</Text></Box>)}</Grid></Box>
         <Box mt={{ base: 14, md: 20 }}>
           <Flex align="end" justify="space-between" gap={4} mb={6}>
             <Box><Text color="rose.700" fontSize="sm">SELECTED HIGHLIGHTS</Text><Heading mt={2} fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">主な実績</Heading></Box>
@@ -112,7 +130,7 @@ export default function Home() {
         </Box>
       </Container></Box>
 
-      <Box bg="#35453c" color="white" py={{ base: 16, md: 24 }}><Container maxW="6xl"><Text color="rose.200" fontSize="sm">03 / NEXT</Text><Heading mt={4} maxW="760px" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.5" fontWeight="500">世界で通用する専門性を、<br />人の健康に届く価値へ。</Heading><SimpleGrid columns={{ base: 1, md: 3 }} gap={8} mt={12}>{[["学部", "医療AIの基礎を固め、腸内細菌画像の解析と国内学会発表へ。"],["修士", "国際会議・論文発表に挑み、Johns Hopkins Universityでの研究を目指す。"],["その先", "健康寿命の分野で国境を越えて共同研究し、社会に届く成果を生み出す。"]].map(([title,body]) => <Box key={title} borderTop="1px solid" borderColor="whiteAlpha.400" pt={6}><Text color="rose.200" fontWeight="bold">{title}</Text><Text mt={4} color="whiteAlpha.800" lineHeight="1.9">{body}</Text></Box>)}</SimpleGrid></Container></Box>
+      <Box bg="#35453c" color="white" py={{ base: 16, md: 24 }}><Container maxW="6xl"><Text color="rose.200" fontSize="sm">03 / FUTURE</Text><Badge mt={4} bg="whiteAlpha.200" color="rose.100" px={3} py={1}>これから実現したいこと</Badge><Heading mt={5} maxW="760px" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.5" fontWeight="500">世界で通用する専門性を、<br />人の健康に届く価値へ。</Heading><SimpleGrid columns={{ base: 1, md: 3 }} gap={8} mt={12}>{[["学部", "医療AIの基礎を固め、腸内細菌画像の解析と国内学会発表へ。"],["大学院", "国際会議・論文発表に挑み、ドイツ人工知能研究センター（DFKI）で研究する。"],["その先", "健康寿命の分野で国境を越えて共同研究し、社会に届く成果を生み出す。"]].map(([title,body]) => <Box key={title} borderTop="1px solid" borderColor="whiteAlpha.400" pt={6}><Text color="rose.200" fontWeight="bold">{title}</Text><Text mt={4} color="whiteAlpha.800" lineHeight="1.9">{body}</Text></Box>)}</SimpleGrid></Container></Box>
     </Box>
 
     <Box as="footer" bg="white" py={10}><Container maxW="6xl"><Flex direction={{ base: "column", sm: "row" }} gap={3} justify="space-between"><Text fontFamily="heading">Misato Hayashi</Text><Text color="gray.500" fontSize="sm">Research Portfolio</Text></Flex></Container></Box>
