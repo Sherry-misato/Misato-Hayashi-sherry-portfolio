@@ -121,6 +121,16 @@ export default function Home() {
           </Stack>
         </Box>
 
+        <Box mt={{ base: 14, md: 20 }} borderY="1px solid" borderColor="rose.200" py={{ base: 8, md: 10 }}>
+          <Grid templateColumns={{ base: "1fr", md: ".7fr 1.3fr" }} gap={{ base: 7, md: 14 }} alignItems="start">
+            <Box><Text color="rose.700" fontSize="sm">QUALIFICATIONS</Text><Heading mt={2} fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">資格</Heading></Box>
+            <SimpleGrid columns={{ base: 1, sm: 2 }} gap={{ base: 6, sm: 10 }}>
+              <Box><Text color="rose.500" fontSize="sm">LANGUAGE</Text><Text mt={2} fontFamily="heading" fontSize="xl">トルコ語検定 NE5級</Text><Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.8">異なる文化への好奇心から学習を継続。</Text></Box>
+              <Box><Text color="rose.500" fontSize="sm">ABACUS</Text><Text mt={2} fontFamily="heading" fontSize="xl">珠算能力検定 初段</Text><Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.8">幼い頃から積み重ねた、正確さと集中力。</Text></Box>
+            </SimpleGrid>
+          </Grid>
+        </Box>
+
         <Box mt={{ base: 16, md: 24 }}>
           <Text color="rose.700" fontSize="sm">FEATURED STORIES</Text>
           <Heading mt={2} fontSize={{ base: "2xl", md: "3xl" }} fontWeight="500">インタビュー・掲載</Heading>
@@ -151,7 +161,7 @@ export default function Home() {
             <Grid templateColumns="1.18fr .82fr" gap={3} alignItems="start"><Box position="relative" aspectRatio={4 / 3} overflow="hidden" borderRadius="6px"><Image src={assetPath("/photos/now-latte.webp")} alt="ラテアートと彩り豊かなサラダ" fill sizes="(max-width: 992px) 58vw, 28vw" style={{ objectFit: "cover" }} /></Box><Box position="relative" aspectRatio={3 / 4} overflow="hidden" borderRadius="6px"><Image src={assetPath("/photos/now-dance.webp")} alt="crew battleで優勝したダンスメンバー" fill sizes="(max-width: 992px) 38vw, 18vw" style={{ objectFit: "cover" }} /></Box></Grid>
             <Text mt={7} color="rose.700" fontSize="xs" fontWeight="bold" letterSpacing=".14em">LIFE & FAVORITES</Text>
             <Heading as="h3" mt={3} fontSize="2xl" fontWeight="500">小さな「できた」を楽しむ</Heading>
-            <Text mt={4} color="gray.600" lineHeight="1.9">ラテアートは、きれいな一杯を描けるよう練習中。ダンスでは仲間とcrew battle優勝を喜びました。おいしく食べること、身体を動かすことも、健やかに研究を続けるための大切な習慣です。</Text>
+            <Text mt={4} color="gray.600" lineHeight="1.9">ラテアートは、きれいな一杯を描けるよう練習中。ダンスでは仲間とcrew battle優勝を喜び、もっと学びたいと思ったら韓国までレッスンを受けに行きます。好奇心を行動に変えることは、研究でも日常でも変わりません。</Text>
           </Box>
         </SimpleGrid>
       </Container></Box>
