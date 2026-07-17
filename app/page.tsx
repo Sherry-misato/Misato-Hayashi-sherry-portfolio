@@ -250,36 +250,64 @@ export default function Home() {
           <Text color="rose.700" fontSize="sm" letterSpacing=".12em">LIFE MAP</Text>
           <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">What My Experiences Point Toward</Heading>
           <Text mt={2} color="gray.500">経験の中心にあるもの</Text>
-          <Grid templateColumns={{ base: "1fr", lg: ".92fr 1.08fr" }} gap={{ base: 10, lg: 14 }} alignItems="center" mt={10}>
-            <Box position="relative" minH={{ base: "360px", md: "430px" }}>
-              <Box position="absolute" inset={{ base: "10% 8%", md: "8% 11%" }} borderRadius="full" bg="rose.100" opacity=".82" />
-              <Box position="absolute" top={{ base: "5%", md: "4%" }} left={{ base: "8%", md: "10%" }} w={{ base: "54%", md: "50%" }} aspectRatio={1} borderRadius="full" bg="#fff0f4" border="1px solid" borderColor="rose.200" p={6}>
-                <Text color="rose.700" fontWeight="bold">Care</Text>
-                <Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.7">Grandfather&apos;s story</Text>
-                <Text color="gray.500" fontSize="xs">祖父の経験</Text>
+          <Grid templateColumns={{ base: "1fr", lg: "1.05fr .95fr" }} gap={{ base: 10, lg: 14 }} alignItems="center" mt={10}>
+            <Box bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" p={{ base: 5, md: 8 }} boxShadow="0 24px 60px rgba(117,54,71,.08)">
+              <Box display={{ base: "none", md: "block" }}>
+                <Grid templateColumns="1fr 1fr 1fr" templateRows="auto auto auto" gap={4} alignItems="stretch">
+                  <Box bg="#fff7f9" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+                    <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">01 CARE</Text>
+                    <Heading as="p" mt={3} fontSize="lg" fontWeight="500">Grandfather&apos;s story</Heading>
+                    <Text mt={2} color="gray.500" fontSize="sm">祖父の経験</Text>
+                  </Box>
+                  <Box borderBottom="1px solid" borderColor="rose.200" alignSelf="center" />
+                  <Box bg="#fff7f9" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+                    <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">02 BODY</Text>
+                    <Heading as="p" mt={3} fontSize="lg" fontWeight="500">Ballet and microbiome</Heading>
+                    <Text mt={2} color="gray.500" fontSize="sm">身体と腸内細菌</Text>
+                  </Box>
+                  <Box borderRight="1px solid" borderColor="rose.200" justifySelf="center" h="36px" />
+                  <Flex bg="rose.50" border="1px solid" borderColor="rose.300" borderRadius="full" minH="190px" align="center" justify="center" textAlign="center" p={7}>
+                    <Box>
+                      <Text color="rose.700" fontSize="xs" letterSpacing=".16em" fontWeight="bold">CENTER</Text>
+                      <Heading as="p" mt={3} fontSize={{ md: "2xl" }} fontWeight="500" lineHeight="1.35">Extend<br />Healthy Years</Heading>
+                      <Text mt={3} color="gray.600" fontSize="sm">健康寿命を伸ばす</Text>
+                    </Box>
+                  </Flex>
+                  <Box borderLeft="1px solid" borderColor="rose.200" justifySelf="center" h="36px" />
+                  <Box bg="#f7fbf8" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+                    <Text color="sage" fontSize="xs" letterSpacing=".12em" fontWeight="bold">03 TECHNOLOGY</Text>
+                    <Heading as="p" mt={3} fontSize="lg" fontWeight="500">AI and engineering</Heading>
+                    <Text mt={2} color="gray.500" fontSize="sm">AIとものづくり</Text>
+                  </Box>
+                  <Box borderTop="1px solid" borderColor="rose.200" alignSelf="center" />
+                  <Box bg="#fffaf2" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+                    <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">04 VOICE</Text>
+                    <Heading as="p" mt={3} fontSize="lg" fontWeight="500">STEAM outreach</Heading>
+                    <Text mt={2} color="gray.500" fontSize="sm">発信と継承</Text>
+                  </Box>
+                </Grid>
               </Box>
-              <Box position="absolute" top={{ base: "5%", md: "4%" }} right={{ base: "8%", md: "10%" }} w={{ base: "54%", md: "50%" }} aspectRatio={1} borderRadius="full" bg="#fff7f9" border="1px solid" borderColor="rose.200" p={6}>
-                <Text color="rose.700" fontWeight="bold">Body</Text>
-                <Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.7">Ballet and microbiome</Text>
-                <Text color="gray.500" fontSize="xs">身体と腸内細菌</Text>
-              </Box>
-              <Box position="absolute" bottom={{ base: "5%", md: "4%" }} left={{ base: "8%", md: "10%" }} w={{ base: "54%", md: "50%" }} aspectRatio={1} borderRadius="full" bg="#f7fbf8" border="1px solid" borderColor="rose.200" p={6}>
-                <Text color="sage" fontWeight="bold">Technology</Text>
-                <Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.7">AI and engineering</Text>
-                <Text color="gray.500" fontSize="xs">AIとものづくり</Text>
-              </Box>
-              <Box position="absolute" bottom={{ base: "5%", md: "4%" }} right={{ base: "8%", md: "10%" }} w={{ base: "54%", md: "50%" }} aspectRatio={1} borderRadius="full" bg="#fffaf2" border="1px solid" borderColor="rose.200" p={6}>
-                <Text color="rose.700" fontWeight="bold">Voice</Text>
-                <Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.7">STEAM outreach</Text>
-                <Text color="gray.500" fontSize="xs">発信と継承</Text>
-              </Box>
-              <Flex position="absolute" inset="31%" borderRadius="full" bg="white" border="1px solid" borderColor="rose.300" boxShadow="0 18px 40px rgba(117,54,71,.13)" align="center" justify="center" textAlign="center" p={6}>
-                <Box>
-                  <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">CENTER</Text>
-                  <Heading as="p" mt={2} fontSize={{ base: "xl", md: "2xl" }} fontWeight="500" lineHeight="1.45">Extend Healthy Years</Heading>
-                  <Text mt={2} color="gray.500" fontSize="sm">健康寿命を伸ばす</Text>
-                </Box>
-              </Flex>
+              <Stack display={{ base: "flex", md: "none" }} spacing={4}>
+                <Flex bg="rose.50" border="1px solid" borderColor="rose.300" borderRadius="8px" minH="150px" align="center" justify="center" textAlign="center" p={6}>
+                  <Box>
+                    <Text color="rose.700" fontSize="xs" letterSpacing=".16em" fontWeight="bold">CENTER</Text>
+                    <Heading as="p" mt={2} fontSize="2xl" fontWeight="500" lineHeight="1.35">Extend Healthy Years</Heading>
+                    <Text mt={2} color="gray.600" fontSize="sm">健康寿命を伸ばす</Text>
+                  </Box>
+                </Flex>
+                {[
+                  ["01 CARE", "Grandfather's story", "祖父の経験", "rose.700"],
+                  ["02 BODY", "Ballet and microbiome", "身体と腸内細菌", "rose.700"],
+                  ["03 TECHNOLOGY", "AI and engineering", "AIとものづくり", "sage"],
+                  ["04 VOICE", "STEAM outreach", "発信と継承", "rose.700"],
+                ].map(([label, title, ja, color]) => (
+                  <Box key={label} bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+                    <Text color={color} fontSize="xs" letterSpacing=".12em" fontWeight="bold">{label}</Text>
+                    <Heading as="p" mt={2} fontSize="lg" fontWeight="500">{title}</Heading>
+                    <Text mt={1} color="gray.500" fontSize="sm">{ja}</Text>
+                  </Box>
+                ))}
+              </Stack>
             </Box>
             <Stack spacing={4}>
               {lifeMapItems.map((item) => (
