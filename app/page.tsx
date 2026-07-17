@@ -255,11 +255,15 @@ export default function Home() {
               <Box display={{ base: "none", md: "block" }} position="relative" minH="560px">
                 <Box position="absolute" top="50%" left="50%" w="1px" h="72%" bg="rose.200" transform="translate(-50%, -50%) rotate(45deg)" opacity=".75" />
                 <Box position="absolute" top="50%" left="50%" w="1px" h="72%" bg="rose.200" transform="translate(-50%, -50%) rotate(-45deg)" opacity=".75" />
-                <Box position="absolute" top="24%" left="50%" w="36%" h="1px" bg="rose.200" transform="translateX(-50%)" opacity=".55" />
-                <Box position="absolute" bottom="24%" left="50%" w="36%" h="1px" bg="rose.200" transform="translateX(-50%)" opacity=".55" />
-                <Box position="absolute" top="50%" left="24%" w="1px" h="35%" bg="rose.200" transform="translateY(-50%)" opacity=".55" />
-                <Box position="absolute" top="50%" right="24%" w="1px" h="35%" bg="rose.200" transform="translateY(-50%)" opacity=".55" />
                 <Box position="absolute" inset="13%" border="1px solid" borderColor="rose.100" borderRadius="full" opacity=".85" />
+                {[
+                  ["29%", "29%"],
+                  ["70%", "29%"],
+                  ["29%", "70%"],
+                  ["70%", "70%"],
+                ].map(([left, top]) => (
+                  <Box key={`${left}-${top}`} position="absolute" left={left} top={top} w="10px" h="10px" borderRadius="full" bg="white" border="1px solid" borderColor="rose.300" transform="translate(-50%, -50%)" zIndex="1" />
+                ))}
                 <Box position="absolute" top="0" left="0" w="34%" bg="#fff7f9" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5} zIndex="1">
                     <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">01 CARE</Text>
                     <Heading as="p" mt={3} fontSize="lg" fontWeight="500">Grandfather&apos;s story</Heading>
@@ -277,16 +281,6 @@ export default function Home() {
                       <Text mt={3} color="gray.600" fontSize="sm">健康寿命を伸ばす</Text>
                     </Box>
                   </Flex>
-                {[
-                  ["16%", "31%", "Care begins the question"],
-                  ["57%", "31%", "Body reveals possibility"],
-                  ["14%", "64%", "Technology gives shape"],
-                  ["57%", "64%", "Voice carries it forward"],
-                ].map(([left, top, text]) => (
-                  <Text key={text} position="absolute" left={left} top={top} color="rose.700" fontSize="xs" bg="white" px={2} zIndex="1">
-                    {text}
-                  </Text>
-                ))}
                 <Box position="absolute" bottom="0" left="0" w="34%" bg="#f7fbf8" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5} zIndex="1">
                     <Text color="sage" fontSize="xs" letterSpacing=".12em" fontWeight="bold">03 TECHNOLOGY</Text>
                     <Heading as="p" mt={3} fontSize="lg" fontWeight="500">AI and engineering</Heading>
