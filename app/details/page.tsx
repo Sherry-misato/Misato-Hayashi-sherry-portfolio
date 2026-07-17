@@ -32,16 +32,18 @@ const externalLinks = [
 
 const timeline = [
   {
+    id: "ballet",
     year: "2021",
     title: "2nd Place in Classical Ballet",
     jaTitle: "クラシックバレエで全国2位",
     bullets: [
-      ["Awarded 2nd place in the Classical C category at the Toyama International Dance Competition.", "富山国際ダンスコンペティション クラシックC部門 第2位。"],
+      ["Awarded 2nd place at the Toyama International Dance Competition.", "富山国際ダンスコンペティション 第2位。"],
       ["Years of ballet training shaped my persistence and discipline.", "長く続けたバレエを通じて、練習を積み重ねる力を育てました。"],
     ],
     links: [{ label: "Competition Result", url: "https://ballet-search.com/2021/11/23/toyama-dance2021/" }],
   },
   {
+    id: "interview",
     year: "2022",
     title: "High School Interview",
     jaTitle: "高校時代のインタビュー",
@@ -52,6 +54,7 @@ const timeline = [
     links: [{ label: "Interview Article", url: "https://hosei2.ed.jp/now/319/2022_05_31_2" }],
   },
   {
+    id: "cansat",
     year: "2023",
     title: "CanSat World Competition",
     jaTitle: "CanSat世界大会",
@@ -66,6 +69,7 @@ const timeline = [
     ],
   },
   {
+    id: "sgx",
     year: "2024-2026",
     title: "SONY STEAM GIRLS EXPERIENCE",
     jaTitle: "SGXでの活動",
@@ -81,6 +85,7 @@ const timeline = [
     ],
   },
   {
+    id: "hosei-museum",
     year: "2025",
     title: "HOSEI Museum Interview",
     jaTitle: "HOSEIミュージアム対談",
@@ -91,6 +96,7 @@ const timeline = [
     links: [{ label: "Watch on YouTube", url: "https://www.youtube.com/watch?v=ntC2RwkO6Tc" }],
   },
   {
+    id: "dance",
     year: "2025",
     title: "Winner, Unitare DANCE TRACKS vol.2",
     jaTitle: "ユニタレ DANCE TRACKS vol.2 crew battle優勝",
@@ -156,7 +162,7 @@ export default function Details() {
           <Text mt={2} color="gray.500">ストーリーとしての歩み</Text>
           <Stack mt={10} spacing={0} borderTop="1px solid" borderColor="rose.200">
             {timeline.map((item) => (
-              <Grid key={`${item.year}-${item.title}`} templateColumns={{ base: "1fr", md: "100px 1fr 260px" }} gap={{ base: 4, md: 8 }} py={8} borderBottom="1px solid" borderColor="rose.200">
+              <Grid id={item.id} key={`${item.year}-${item.title}`} templateColumns={{ base: "1fr", md: "100px 1fr 260px" }} gap={{ base: 4, md: 8 }} py={8} borderBottom="1px solid" borderColor="rose.200" scrollMarginTop="88px">
                 <Text color="rose.700" fontWeight="bold">{item.year}</Text>
                 <Box>
                   <Heading as="h2" fontSize="xl" fontWeight="500">{item.title}</Heading>
@@ -190,10 +196,10 @@ export default function Details() {
             <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">Affiliation and Qualifications</Heading>
             <Text mt={2} color="gray.500">所属・資格</Text>
             <Text mt={5} color="gray.700" lineHeight="1.9">
-              Misato Hayashi is a B3 student in the Department of Applied Informatics, Faculty of Science and Engineering, Hosei University, and belongs to Iyatomi Laboratory.
+              Misato Hayashi is a third-year undergraduate student in the Department of Applied Informatics, Faculty of Science and Engineering, Hosei University, and belongs to Iyatomi Laboratory.
             </Text>
             <Text mt={2} color="gray.500" lineHeight="1.8">
-              林美聡。法政大学第二高等学校出身、法政大学 理工学部 応用情報工学科 B3、彌冨研究室所属。
+              林美聡。法政大学第二高等学校出身、法政大学 理工学部 応用情報工学科 学部3年、彌冨研究室所属。
             </Text>
             <Text mt={4} color="gray.700" lineHeight="1.9">
               Campus: 3-7-2 Kajino-cho, Koganei-shi, Tokyo 184-8584, Japan
@@ -216,7 +222,7 @@ export default function Details() {
           {photoCards.map((photo) => (
             <Box key={photo.src} bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" overflow="hidden">
               <Box position="relative" aspectRatio={4 / 3}>
-                <Image src={assetPath(photo.src)} alt={photo.title} fill sizes="(max-width: 768px) 92vw, 30vw" style={{ objectFit: "cover" }} />
+                <Image src={assetPath(photo.src)} alt={photo.title} fill sizes="(max-width: 768px) 92vw, 30vw" style={{ objectFit: "cover", objectPosition: photo.src.includes("latte") ? "82% center" : "center" }} />
               </Box>
               <Box p={5}>
                 <Text color="rose.700" fontWeight="bold">{photo.title}</Text>

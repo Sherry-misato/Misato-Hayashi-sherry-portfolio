@@ -35,10 +35,37 @@ const profileLinks = [
 ];
 
 const news = [
-  { year: "2026", en: "Presented at a workshop for younger students through SONY STEAM GIRLS EXPERIENCE.", ja: "SONY STEAM GIRLS EXPERIENCEの活動として、母校訪問ワークショップに登壇。" },
-  { year: "2025", en: "Appeared in a HOSEI Museum interview about university life and challenges.", ja: "HOSEIミュージアム対談に出演し、大学での挑戦と学びを紹介。" },
-  { year: "2024", en: "Joined SONY STEAM GIRLS EXPERIENCE as a first cohort member.", ja: "SONY STEAM GIRLS EXPERIENCE一期生として活動を開始。" },
-  { year: "2023", en: "Represented Japan at the CanSat World Competition.", ja: "CanSat World Competitionに日本代表として出場。" },
+  { year: "2026", en: "Presented at a workshop for younger students through SONY STEAM GIRLS EXPERIENCE.", ja: "SONY STEAM GIRLS EXPERIENCEの活動として、母校訪問ワークショップに登壇。", url: "https://www.sony.com/ja/SonyInfo/diversity/steam-ex/" },
+  { year: "2025", en: "Appeared in a HOSEI Museum interview about university life and challenges.", ja: "HOSEIミュージアム対談に出演し、大学での挑戦と学びを紹介。", url: "https://www.youtube.com/watch?v=ntC2RwkO6Tc" },
+  { year: "2024", en: "Joined SONY STEAM GIRLS EXPERIENCE as a first cohort member.", ja: "SONY STEAM GIRLS EXPERIENCE一期生として活動を開始。", url: "https://www.sony.com/ja/SonyInfo/diversity/steam-ex/" },
+  { year: "2023", en: "Represented Japan at the CanSat World Competition.", ja: "CanSat World Competitionに日本代表として出場。", url: "https://cansatcompetition.com/" },
+];
+
+const featuredStories = [
+  {
+    title: "HOSEI Museum Interview",
+    jaTitle: "HOSEIミュージアム対談",
+    body: "A video interview about my university life, research interests, and challenges.",
+    ja: "大学での挑戦や活動を振り返る対談映像です。",
+    url: "https://www.youtube.com/watch?v=ntC2RwkO6Tc",
+    thumbnail: "https://img.youtube.com/vi/ntC2RwkO6Tc/hqdefault.jpg",
+  },
+  {
+    title: "SONY STEAM GIRLS EXPERIENCE",
+    jaTitle: "SGX公式サイト",
+    body: "A scholarship-supported baton-passing program for women in STEM.",
+    ja: "理工系女子学生への奨学金支援と、次世代へSTEAMをつなぐプログラムです。",
+    url: "https://www.sony.com/ja/SonyInfo/diversity/steam-ex/",
+    thumbnail: "/photos/sgx-workshop.webp",
+  },
+  {
+    title: "CanSat World Competition",
+    jaTitle: "CanSat世界大会",
+    body: "A hands-on engineering competition that led me to international teamwork.",
+    ja: "ものづくりとチームで挑む経験が、研究への関心につながりました。",
+    url: "https://cansatcompetition.com/",
+    thumbnail: "/photos/cansat-world.webp",
+  },
 ];
 
 const researchCards = [
@@ -67,9 +94,9 @@ const highlights = [
     year: "2021",
     title: "2nd Place in a National Ballet Competition",
     jaTitle: "クラシックバレエ 全国2位",
-    en: "Awarded 2nd place in the Classical C category at the Toyama International Dance Competition.",
-    ja: "富山国際ダンスコンペティション クラシックC部門 第2位。",
-    links: [{ label: "Competition Result", url: "https://ballet-search.com/2021/11/23/toyama-dance2021/" }],
+    en: "Awarded 2nd place at the Toyama International Dance Competition.",
+    ja: "富山国際ダンスコンペティション 第2位。",
+    links: [{ label: "Competition Result", url: "https://ballet-search.com/2021/11/23/toyama-dance2021/", isExternal: true }],
   },
   {
     year: "2023",
@@ -78,8 +105,8 @@ const highlights = [
     en: "Won the national CanSat competition and represented Japan at the world competition.",
     ja: "缶サット甲子園で全国優勝。日本代表として世界大会へ出場。",
     links: [
-      { label: "Official Site", url: "https://cansatcompetition.com/" },
-      { label: "Article", url: "https://rarea.events/event/190208" },
+      { label: "Official Site", url: "https://cansatcompetition.com/", isExternal: true },
+      { label: "Article", url: "https://rarea.events/event/190208", isExternal: true },
     ],
   },
   {
@@ -88,7 +115,7 @@ const highlights = [
     jaTitle: "SGXでの活動",
     en: "A scholarship and baton-passing program that supports women in STEM and encourages the next generation.",
     ja: "理工系女子学生への奨学金支援と、次世代へSTEAMの楽しさをつなぐバトンプログラムに参加。",
-    links: [{ label: "SGX Official Site", url: "https://www.sony.com/ja/SonyInfo/diversity/steam-ex/" }],
+    links: [{ label: "SGX Official Site", url: "https://www.sony.com/ja/SonyInfo/diversity/steam-ex/", isExternal: true }],
   },
   {
     year: "2025",
@@ -96,14 +123,14 @@ const highlights = [
     jaTitle: "crew battle優勝",
     en: "Won a crew battle and traveled to Korea to take dance lessons.",
     ja: "ユニタレ DANCE TRACKS vol.2のcrew battleで優勝。韓国へダンスレッスンを受けに行く行動力も大切にしています。",
-    links: [],
+    links: [{ label: "Details", url: "/details#dance", isExternal: false }],
   },
 ];
 
 const contactItems = [
-  { label: "Email", value: "your.email@example.com", note: "公開用メールアドレスをここに掲載できます" },
+  { label: "Email", value: "hayashimisato1@gmail.com", note: "公開用メールアドレス" },
   { label: "Campus", value: "3-7-2 Kajino-cho, Koganei-shi, Tokyo 184-8584, Japan", note: "〒184-8584 東京都小金井市梶野町3-7-2" },
-  { label: "Affiliation", value: "B3, Department of Applied Informatics, Hosei University / Iyatomi Laboratory", note: "法政大学 理工学部 応用情報工学科 B3 / 彌冨研究室" },
+  { label: "Affiliation", value: "Third-year undergraduate student, Department of Applied Informatics, Hosei University / Iyatomi Laboratory", note: "法政大学 理工学部 応用情報工学科 学部3年 / 彌冨研究室" },
 ];
 
 export default function Home() {
@@ -136,10 +163,10 @@ export default function Home() {
                 </Text>
               </Heading>
               <Text mt={5} color="gray.700" lineHeight="2" fontSize={{ base: "md", md: "lg" }}>
-                B3 student in Applied Informatics at Hosei University, Iyatomi Laboratory.
+                Third-year undergraduate student in Applied Informatics at Hosei University, Iyatomi Laboratory.
               </Text>
               <Text mt={2} color="gray.500" lineHeight="1.9">
-                法政大学第二高等学校出身。現在は法政大学 理工学部 応用情報工学科 B3として、彌冨研究室で学んでいます。
+                法政大学第二高等学校出身。現在は法政大学 理工学部 応用情報工学科の学部3年として、彌冨研究室で学んでいます。
               </Text>
               <Heading as="p" mt={9} maxW="820px" fontSize={{ base: "2xl", md: "4xl" }} lineHeight="1.55" fontWeight="500">
                 Extending healthy years through medical AI and microbiome research.
@@ -148,10 +175,10 @@ export default function Home() {
                 健康でいられる時間を、研究の力で伸ばしたい。
               </Text>
               <Text mt={6} maxW="720px" color="gray.700" lineHeight="2">
-                Inspired by my family&apos;s experience with illness, I am interested in preventive healthcare: supporting people before symptoms become severe. I hope to connect gut microbiome data, AI, and future computing technologies to create more personalized options for health.
+                Inspired by my beloved grandfather&apos;s experience with illness, I am interested in preventive healthcare: supporting people before symptoms become severe. I hope to connect gut microbiome data, AI, and future computing technologies to create more personalized options for health.
               </Text>
               <Text mt={3} maxW="720px" color="gray.500" lineHeight="1.9">
-                身近な家族の経験から、発症後の治療だけでなく未病の段階で支える研究に惹かれています。腸内細菌叢、AI、量子技術を横断しながら、一人ひとりに合う予防と治療の選択肢を広げたいです。
+                大好きな祖父の経験から、発症後の治療だけでなく未病の段階で支える研究に惹かれています。腸内細菌叢、AI、量子技術を横断しながら、一人ひとりに合う予防と治療の選択肢を広げたいです。
               </Text>
               <HStack mt={8} spacing={4} flexWrap="wrap">
                 <Button as={NextLink} href="/details" rightIcon={<ArrowForwardIcon />} bg="rose.700" color="white" _hover={{ bg: "rose.500" }}>
@@ -180,6 +207,20 @@ export default function Home() {
 
         <Box bg="white" borderY="1px solid" borderColor="rose.100" py={{ base: 14, md: 20 }}>
           <Container maxW="6xl">
+            <Text color="rose.700" fontSize="sm" letterSpacing=".12em">INTRODUCTION</Text>
+            <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">Biography</Heading>
+            <Text mt={2} color="gray.500">はじめに</Text>
+            <Text mt={7} maxW="900px" color="gray.800" fontSize={{ base: "md", md: "lg" }} lineHeight="2">
+              Misato Hayashi is a third-year undergraduate student in the Department of Applied Informatics at Hosei University, working in Iyatomi Laboratory. Her interests lie at the intersection of medical AI, gut microbiome analysis, and preventive healthcare. Through research, STEAM outreach, dance, and international experiences, she values turning curiosity into action and sharing what she learns with others.
+            </Text>
+            <Text mt={4} maxW="900px" color="gray.500" lineHeight="1.9">
+              林美聡は、法政大学 理工学部 応用情報工学科の学部3年として彌冨研究室で学んでいます。医療AI、腸内細菌叢、予防医療に関心があり、研究・STEAM活動・ダンス・海外での経験を通して、好奇心を行動に変え、学びを人に届けることを大切にしています。
+            </Text>
+          </Container>
+        </Box>
+
+        <Box bg="white" borderY="1px solid" borderColor="rose.100" py={{ base: 14, md: 20 }}>
+          <Container maxW="6xl">
             <Flex align="end" justify="space-between" gap={6} mb={8}>
               <Box>
                 <Text color="rose.700" fontSize="sm" letterSpacing=".12em">NEWS</Text>
@@ -195,7 +236,9 @@ export default function Home() {
                 <Grid key={item.en} templateColumns={{ base: "64px 1fr", md: "96px 1fr" }} gap={5} py={5} borderBottom="1px solid" borderColor="rose.200">
                   <Text color="rose.700" fontWeight="bold">{item.year}</Text>
                   <Box>
-                    <Text color="gray.800" lineHeight="1.8">{item.en}</Text>
+                    <Link href={item.url} isExternal color="gray.800" lineHeight="1.8" fontWeight="bold">
+                      {item.en} <ExternalLinkIcon mx="2px" />
+                    </Link>
                     <Text mt={1} color="gray.500" fontSize="sm" lineHeight="1.8">{item.ja}</Text>
                   </Box>
                 </Grid>
@@ -203,6 +246,34 @@ export default function Home() {
             </Stack>
           </Container>
         </Box>
+
+        <Container maxW="6xl" py={{ base: 16, md: 22 }}>
+          <Text color="rose.700" fontSize="sm" letterSpacing=".12em">FEATURED STORIES</Text>
+          <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">Explore More</Heading>
+          <Text mt={2} color="gray.500">詳しく見たくなるリンク</Text>
+          <SimpleGrid columns={{ base: 1, md: 3 }} gap={5} mt={9}>
+            {featuredStories.map((story) => (
+              <Link key={story.title} href={story.url} isExternal _hover={{ textDecoration: "none" }}>
+                <Box bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" overflow="hidden" h="100%">
+                  <Box position="relative" aspectRatio={16 / 9} bg="rose.100">
+                    {story.thumbnail.startsWith("http") ? (
+                      <Box as="img" src={story.thumbnail} alt={story.title} w="full" h="full" objectFit="cover" />
+                    ) : (
+                      <Image src={assetPath(story.thumbnail)} alt={story.title} fill sizes="(max-width: 768px) 92vw, 30vw" style={{ objectFit: "cover" }} />
+                    )}
+                  </Box>
+                  <Box p={6}>
+                    <Text color="rose.700" fontWeight="bold">{story.title}</Text>
+                    <Text mt={1} color="gray.500" fontSize="sm">{story.jaTitle}</Text>
+                    <Text mt={4} color="gray.700" lineHeight="1.8">{story.body}</Text>
+                    <Text mt={2} color="gray.500" fontSize="sm" lineHeight="1.7">{story.ja}</Text>
+                    <Text mt={5} color="rose.700" fontWeight="bold" fontSize="sm">Open <ExternalLinkIcon mx="2px" /></Text>
+                  </Box>
+                </Box>
+              </Link>
+            ))}
+          </SimpleGrid>
+        </Container>
 
         <Container id="research" maxW="6xl" py={{ base: 16, md: 24 }}>
           <Text color="rose.700" fontSize="sm" letterSpacing=".12em">RESEARCH</Text>
@@ -244,7 +315,7 @@ export default function Home() {
                   </Box>
                   <Stack spacing={2} align={{ base: "start", md: "end" }}>
                     {item.links.map((link) => (
-                      <Link key={link.url} href={link.url} isExternal color="rose.700" fontSize="sm" fontWeight="bold">
+                      <Link key={link.url} href={link.url} isExternal={link.isExternal !== false} color="rose.700" fontSize="sm" fontWeight="bold">
                         {link.label} <ExternalLinkIcon mx="2px" />
                       </Link>
                     ))}
@@ -283,7 +354,7 @@ export default function Home() {
               <Text mt={2} color="gray.500">プライベートの好きなこと</Text>
               <Grid mt={7} templateColumns="1.15fr .85fr" templateRows="1fr 1fr" gap={3} h={{ base: "330px", sm: "410px" }}>
                 <Box position="relative" gridRow="1 / span 2" overflow="hidden" borderRadius="8px">
-                  <Image src={assetPath("/photos/now-latte.webp")} alt="Latte art and salad" fill sizes="(max-width: 992px) 56vw, 28vw" style={{ objectFit: "cover" }} />
+                  <Image src={assetPath("/photos/now-latte.webp")} alt="Latte art in a cafe" fill sizes="(max-width: 992px) 56vw, 28vw" style={{ objectFit: "cover", objectPosition: "82% center" }} />
                 </Box>
                 <Box position="relative" overflow="hidden" borderRadius="8px">
                   <Image src={assetPath("/photos/now-dance.webp")} alt="Dance crew battle winners" fill sizes="(max-width: 992px) 36vw, 18vw" style={{ objectFit: "cover" }} />
