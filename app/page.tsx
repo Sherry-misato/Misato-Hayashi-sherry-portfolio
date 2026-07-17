@@ -252,40 +252,51 @@ export default function Home() {
           <Text mt={2} color="gray.500">経験の中心にあるもの</Text>
           <Grid templateColumns={{ base: "1fr", lg: "1.05fr .95fr" }} gap={{ base: 10, lg: 14 }} alignItems="center" mt={10}>
             <Box bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" p={{ base: 5, md: 8 }} boxShadow="0 24px 60px rgba(117,54,71,.08)">
-              <Box display={{ base: "none", md: "block" }}>
-                <Grid templateColumns="1fr 1fr 1fr" templateRows="auto auto auto" gap={4} alignItems="stretch">
-                  <Box bg="#fff7f9" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+              <Box display={{ base: "none", md: "block" }} position="relative" minH="560px">
+                <Box position="absolute" top="50%" left="50%" w="1px" h="72%" bg="rose.200" transform="translate(-50%, -50%) rotate(45deg)" opacity=".75" />
+                <Box position="absolute" top="50%" left="50%" w="1px" h="72%" bg="rose.200" transform="translate(-50%, -50%) rotate(-45deg)" opacity=".75" />
+                <Box position="absolute" top="24%" left="50%" w="36%" h="1px" bg="rose.200" transform="translateX(-50%)" opacity=".55" />
+                <Box position="absolute" bottom="24%" left="50%" w="36%" h="1px" bg="rose.200" transform="translateX(-50%)" opacity=".55" />
+                <Box position="absolute" top="50%" left="24%" w="1px" h="35%" bg="rose.200" transform="translateY(-50%)" opacity=".55" />
+                <Box position="absolute" top="50%" right="24%" w="1px" h="35%" bg="rose.200" transform="translateY(-50%)" opacity=".55" />
+                <Box position="absolute" inset="13%" border="1px solid" borderColor="rose.100" borderRadius="full" opacity=".85" />
+                <Box position="absolute" top="0" left="0" w="34%" bg="#fff7f9" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5} zIndex="1">
                     <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">01 CARE</Text>
                     <Heading as="p" mt={3} fontSize="lg" fontWeight="500">Grandfather&apos;s story</Heading>
                     <Text mt={2} color="gray.500" fontSize="sm">祖父の経験</Text>
                   </Box>
-                  <Box borderBottom="1px solid" borderColor="rose.200" alignSelf="center" />
-                  <Box bg="#fff7f9" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+                <Box position="absolute" top="0" right="0" w="34%" bg="#fff7f9" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5} zIndex="1">
                     <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">02 BODY</Text>
                     <Heading as="p" mt={3} fontSize="lg" fontWeight="500">Ballet and microbiome</Heading>
                     <Text mt={2} color="gray.500" fontSize="sm">身体と腸内細菌</Text>
                   </Box>
-                  <Box borderRight="1px solid" borderColor="rose.200" justifySelf="center" h="36px" />
-                  <Flex bg="rose.50" border="1px solid" borderColor="rose.300" borderRadius="full" minH="190px" align="center" justify="center" textAlign="center" p={7}>
+                <Flex position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" w="250px" minH="250px" bg="rose.50" border="1px solid" borderColor="rose.300" borderRadius="full" align="center" justify="center" textAlign="center" p={7} zIndex="2" boxShadow="0 18px 45px rgba(117,54,71,.13)">
                     <Box>
                       <Text color="rose.700" fontSize="xs" letterSpacing=".16em" fontWeight="bold">CENTER</Text>
                       <Heading as="p" mt={3} fontSize={{ md: "2xl" }} fontWeight="500" lineHeight="1.35">Extend<br />Healthy Years</Heading>
                       <Text mt={3} color="gray.600" fontSize="sm">健康寿命を伸ばす</Text>
                     </Box>
                   </Flex>
-                  <Box borderLeft="1px solid" borderColor="rose.200" justifySelf="center" h="36px" />
-                  <Box bg="#f7fbf8" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+                {[
+                  ["16%", "31%", "Care begins the question"],
+                  ["57%", "31%", "Body reveals possibility"],
+                  ["14%", "64%", "Technology gives shape"],
+                  ["57%", "64%", "Voice carries it forward"],
+                ].map(([left, top, text]) => (
+                  <Text key={text} position="absolute" left={left} top={top} color="rose.700" fontSize="xs" bg="white" px={2} zIndex="1">
+                    {text}
+                  </Text>
+                ))}
+                <Box position="absolute" bottom="0" left="0" w="34%" bg="#f7fbf8" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5} zIndex="1">
                     <Text color="sage" fontSize="xs" letterSpacing=".12em" fontWeight="bold">03 TECHNOLOGY</Text>
                     <Heading as="p" mt={3} fontSize="lg" fontWeight="500">AI and engineering</Heading>
                     <Text mt={2} color="gray.500" fontSize="sm">AIとものづくり</Text>
                   </Box>
-                  <Box borderTop="1px solid" borderColor="rose.200" alignSelf="center" />
-                  <Box bg="#fffaf2" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5}>
+                <Box position="absolute" bottom="0" right="0" w="34%" bg="#fffaf2" border="1px solid" borderColor="rose.200" borderRadius="8px" p={5} zIndex="1">
                     <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">04 VOICE</Text>
                     <Heading as="p" mt={3} fontSize="lg" fontWeight="500">STEAM outreach</Heading>
                     <Text mt={2} color="gray.500" fontSize="sm">発信と継承</Text>
                   </Box>
-                </Grid>
               </Box>
               <Stack display={{ base: "flex", md: "none" }} spacing={4}>
                 <Flex bg="rose.50" border="1px solid" borderColor="rose.300" borderRadius="8px" minH="150px" align="center" justify="center" textAlign="center" p={6}>
