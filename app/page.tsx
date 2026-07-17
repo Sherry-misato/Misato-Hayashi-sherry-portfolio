@@ -89,6 +89,33 @@ const researchCards = [
   },
 ];
 
+const lifeMapItems = [
+  {
+    title: "My Grandfather",
+    jaTitle: "大好きな祖父の死",
+    body: "The loss of my beloved grandfather made health feel personal, not abstract.",
+    ja: "大好きな祖父を亡くした経験から、健康は遠いテーマではなく、自分の人生に深く関わるものになりました。",
+  },
+  {
+    title: "Ballet and the Body",
+    jaTitle: "バレエと身体への関心",
+    body: "While dancing, I became curious about diet, the body, and why the gut microbiome might change how people feel and live.",
+    ja: "バレエで体づくりやダイエットを考える中で、腸内細菌が身体や健康に与える可能性に興味を持ちました。",
+  },
+  {
+    title: "Engineering and AI",
+    jaTitle: "ものづくりとAI",
+    body: "CanSat and applied informatics taught me that technology can turn questions into tools that support people.",
+    ja: "CanSatや応用情報工学を通して、疑問を人の役に立つ仕組みに変える技術の力を学びました。",
+  },
+  {
+    title: "Sharing STEAM",
+    jaTitle: "学びを届ける活動",
+    body: "Through SGX, I learned to pass curiosity forward and communicate science in a way that reaches younger students.",
+    ja: "SGXでは、好奇心を次の世代へつなぎ、科学や研究を人に届く言葉で伝える経験を重ねています。",
+  },
+];
+
 const highlights = [
   {
     year: "2021",
@@ -219,6 +246,54 @@ export default function Home() {
           </Container>
         </Box>
 
+        <Container maxW="6xl" py={{ base: 16, md: 24 }}>
+          <Text color="rose.700" fontSize="sm" letterSpacing=".12em">LIFE MAP</Text>
+          <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">What My Experiences Point Toward</Heading>
+          <Text mt={2} color="gray.500">経験の中心にあるもの</Text>
+          <Grid templateColumns={{ base: "1fr", lg: ".92fr 1.08fr" }} gap={{ base: 10, lg: 14 }} alignItems="center" mt={10}>
+            <Box position="relative" minH={{ base: "360px", md: "430px" }}>
+              <Box position="absolute" inset={{ base: "10% 8%", md: "8% 11%" }} borderRadius="full" bg="rose.100" opacity=".82" />
+              <Box position="absolute" top={{ base: "5%", md: "4%" }} left={{ base: "8%", md: "10%" }} w={{ base: "54%", md: "50%" }} aspectRatio={1} borderRadius="full" bg="#fff0f4" border="1px solid" borderColor="rose.200" p={6}>
+                <Text color="rose.700" fontWeight="bold">Care</Text>
+                <Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.7">Grandfather&apos;s story</Text>
+                <Text color="gray.500" fontSize="xs">祖父の経験</Text>
+              </Box>
+              <Box position="absolute" top={{ base: "5%", md: "4%" }} right={{ base: "8%", md: "10%" }} w={{ base: "54%", md: "50%" }} aspectRatio={1} borderRadius="full" bg="#fff7f9" border="1px solid" borderColor="rose.200" p={6}>
+                <Text color="rose.700" fontWeight="bold">Body</Text>
+                <Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.7">Ballet and microbiome</Text>
+                <Text color="gray.500" fontSize="xs">身体と腸内細菌</Text>
+              </Box>
+              <Box position="absolute" bottom={{ base: "5%", md: "4%" }} left={{ base: "8%", md: "10%" }} w={{ base: "54%", md: "50%" }} aspectRatio={1} borderRadius="full" bg="#f7fbf8" border="1px solid" borderColor="rose.200" p={6}>
+                <Text color="sage" fontWeight="bold">Technology</Text>
+                <Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.7">AI and engineering</Text>
+                <Text color="gray.500" fontSize="xs">AIとものづくり</Text>
+              </Box>
+              <Box position="absolute" bottom={{ base: "5%", md: "4%" }} right={{ base: "8%", md: "10%" }} w={{ base: "54%", md: "50%" }} aspectRatio={1} borderRadius="full" bg="#fffaf2" border="1px solid" borderColor="rose.200" p={6}>
+                <Text color="rose.700" fontWeight="bold">Voice</Text>
+                <Text mt={2} color="gray.600" fontSize="sm" lineHeight="1.7">STEAM outreach</Text>
+                <Text color="gray.500" fontSize="xs">発信と継承</Text>
+              </Box>
+              <Flex position="absolute" inset="31%" borderRadius="full" bg="white" border="1px solid" borderColor="rose.300" boxShadow="0 18px 40px rgba(117,54,71,.13)" align="center" justify="center" textAlign="center" p={6}>
+                <Box>
+                  <Text color="rose.700" fontSize="xs" letterSpacing=".12em" fontWeight="bold">CENTER</Text>
+                  <Heading as="p" mt={2} fontSize={{ base: "xl", md: "2xl" }} fontWeight="500" lineHeight="1.45">Extend Healthy Years</Heading>
+                  <Text mt={2} color="gray.500" fontSize="sm">健康寿命を伸ばす</Text>
+                </Box>
+              </Flex>
+            </Box>
+            <Stack spacing={4}>
+              {lifeMapItems.map((item) => (
+                <Box key={item.title} bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" p={{ base: 5, md: 6 }}>
+                  <Heading as="h3" fontSize="lg" fontWeight="500">{item.title}</Heading>
+                  <Text mt={1} color="rose.700" fontSize="sm">{item.jaTitle}</Text>
+                  <Text mt={3} color="gray.700" lineHeight="1.8">{item.body}</Text>
+                  <Text mt={1} color="gray.500" fontSize="sm" lineHeight="1.8">{item.ja}</Text>
+                </Box>
+              ))}
+            </Stack>
+          </Grid>
+        </Container>
+
         <Box bg="white" borderY="1px solid" borderColor="rose.100" py={{ base: 14, md: 20 }}>
           <Container maxW="6xl">
             <Flex align="end" justify="space-between" gap={6} mb={8}>
@@ -249,8 +324,8 @@ export default function Home() {
 
         <Container maxW="6xl" py={{ base: 16, md: 22 }}>
           <Text color="rose.700" fontSize="sm" letterSpacing=".12em">FEATURED STORIES</Text>
-          <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">Explore More</Heading>
-          <Text mt={2} color="gray.500">詳しく見たくなるリンク</Text>
+          <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">Stories & Voices</Heading>
+          <Text mt={2} color="gray.500">活動の記録</Text>
           <SimpleGrid columns={{ base: 1, md: 3 }} gap={5} mt={9}>
             {featuredStories.map((story) => (
               <Link key={story.title} href={story.url} isExternal _hover={{ textDecoration: "none" }}>
@@ -377,19 +452,19 @@ export default function Home() {
           <Container maxW="6xl">
             <Text color="rose.200" fontSize="sm" letterSpacing=".12em">FUTURE</Text>
             <Heading mt={4} maxW="850px" fontSize={{ base: "3xl", md: "5xl" }} lineHeight="1.45" fontWeight="500">
-              Toward research at DFKI and medical AI that reaches real people.
+              Building toward international research and medical AI that reaches real people.
             </Heading>
             <Text mt={4} color="rose.100" fontFamily="heading" fontSize={{ base: "xl", md: "2xl" }}>
-              DFKIで研究できる力をつけ、医療AIを人の健康に届く価値へ。
+              国際的な研究の場を目指し、医療AIを人の健康に届く価値へ。
             </Text>
             <Text mt={6} maxW="760px" color="whiteAlpha.850" lineHeight="2">
-              My goal is to present research internationally, publish papers, and eventually conduct research at the German Research Center for Artificial Intelligence (DFKI).
+              My goal is to present research internationally, publish papers, and build the ability to join leading AI research environments, including DFKI as one possible future destination.
             </Text>
             <Text mt={2} maxW="760px" color="whiteAlpha.700" lineHeight="1.9">
-              国際会議・論文発表に挑み、ドイツ人工知能研究センター（DFKI）で研究することを目標にしています。
+              国際会議・論文発表に挑み、将来的な選択肢のひとつとしてDFKIで研究できる力をつけたいと考えています。
             </Text>
             <Button as={NextLink} href="/details#future" mt={9} rightIcon={<ArrowForwardIcon />} bg="white" color="rose.700" _hover={{ bg: "rose.100" }}>
-              Read Future Goals
+              My Direction
             </Button>
           </Container>
         </Box>

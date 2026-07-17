@@ -27,7 +27,6 @@ const externalLinks = [
   { label: "Department of Applied Informatics", ja: "応用情報工学科", url: "https://ai.ws.hosei.ac.jp/wp/" },
   { label: "Iyatomi Laboratory", ja: "彌冨研究室", url: "https://iyatomi-lab.info/" },
   { label: "SONY STEAM GIRLS EXPERIENCE", ja: "SGX公式サイト", url: "https://www.sony.com/ja/SonyInfo/diversity/steam-ex/" },
-  { label: "DFKI", ja: "ドイツ人工知能研究センター", url: "https://www.dfki.de/en/web" },
 ];
 
 const timeline = [
@@ -140,18 +139,18 @@ export default function Details() {
       </Box>
 
       <Container maxW="6xl" pt={{ base: 14, md: 20 }} pb={{ base: 14, md: 20 }}>
-        <Badge bg="rose.100" color="rose.700" px={3} py={1} borderRadius="4px">Detailed Profile</Badge>
+        <Badge bg="rose.100" color="rose.700" px={3} py={1} borderRadius="4px">Journey</Badge>
         <Heading as="h1" mt={6} fontSize={{ base: "4xl", md: "5xl" }} lineHeight="1.35" fontWeight="500">
-          Activities, achievements, and future goals.
+          A journey shaped by curiosity and care.
         </Heading>
         <Text mt={3} color="rose.700" fontFamily="heading" fontSize={{ base: "xl", md: "2xl" }}>
-          活動・実績・目標を、詳しく。
+          好奇心とやさしさから広がる歩み。
         </Text>
         <Text mt={5} maxW="760px" color="gray.600" lineHeight="2">
-          The top page gives a concise overview. This page organizes achievements, articles, official links, and future goals in detail.
+          From ballet and engineering competitions to STEAM outreach and medical AI research, each experience has shaped the way I learn, move, and share ideas with others.
         </Text>
         <Text mt={2} maxW="760px" color="gray.500" lineHeight="1.9">
-          トップページでは短く見せ、ここでは実績、記事、公式リンク、これから挑戦したいことを箇条書きで整理しています。
+          バレエ、ものづくり、STEAM活動、医療AI研究。ひとつひとつの経験が、学びを行動に変える力につながっています。
         </Text>
       </Container>
 
@@ -236,8 +235,8 @@ export default function Details() {
       <Box id="links" bg="white" borderY="1px solid" borderColor="rose.100" py={{ base: 14, md: 20 }}>
         <Container maxW="6xl">
           <Text color="rose.700" fontSize="sm" letterSpacing=".12em">LINKS</Text>
-          <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">Useful URLs</Heading>
-          <Text mt={2} color="gray.500">詳しいURL</Text>
+          <Heading mt={3} fontSize={{ base: "3xl", md: "4xl" }} fontWeight="500">Affiliations & References</Heading>
+          <Text mt={2} color="gray.500">所属と関連情報</Text>
           <SimpleGrid columns={{ base: 1, md: 2 }} gap={5} mt={9}>
             {externalLinks.map((link) => (
               <Link key={link.url} href={link.url} isExternal _hover={{ textDecoration: "none" }}>
@@ -262,7 +261,7 @@ export default function Details() {
           {[
             ["Undergraduate", "Build a solid foundation in medical AI, statistics, and machine learning.", "医療AI・統計・機械学習の基礎を固め、腸内細菌叢データの解析に取り組む。"],
             ["Graduate School", "Present research internationally and turn ideas into papers.", "国際会議や論文発表に挑戦し、専門性を研究成果として形にする。"],
-            ["Future", "Develop the ability to conduct research at DFKI and bring medical AI into real healthcare.", "DFKIで研究できる力をつけ、健康寿命の延伸につながる医療AIを社会へ届ける。"],
+            ["Future", "Build the ability to join leading international AI research environments, with DFKI as one possible future goal, and bring medical AI into real healthcare.", "将来的な目標のひとつとしてDFKIのような国際的なAI研究環境を目指し、健康寿命の延伸につながる医療AIを社会へ届ける。"],
           ].map(([title, en, ja]) => (
             <Box key={title} bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" p={7}>
               <Text color="rose.700" fontWeight="bold">{title}</Text>
