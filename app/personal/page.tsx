@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { Box, Container, Flex, Grid, Heading, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Grid, Heading, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
 
@@ -27,7 +27,9 @@ export default function PersonalPage() {
             <HStack spacing={{ base: 3, md: 7 }} fontSize="sm">
               <Link as={NextLink} href="/research">Research</Link>
               <Link as={NextLink} href="/activities">Activities</Link>
-              <Link as={NextLink} href="/ja">Japanese</Link>
+              <Button as={NextLink} href="/ja" size="sm" variant="outline" borderColor="rose.300" color="rose.700" _hover={{ bg: "rose.50" }}>
+                {"\u65e5\u672c\u8a9e / JA"}
+              </Button>
             </HStack>
           </Flex>
         </Container>

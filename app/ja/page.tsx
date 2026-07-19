@@ -204,7 +204,13 @@ export default function Home() {
             </Link>
             <HStack spacing={{ base: 3, md: 7 }} fontSize="sm" display={{ base: "none", sm: "flex" }}>
               {navItems.map(([label, href]) => (
-                <Link key={href} as={href.startsWith("/") ? NextLink : undefined} href={href}>{label}</Link>
+                label === "English" ? (
+                  <Button key={href} as={NextLink} href={href} size="sm" variant="outline" borderColor="rose.300" color="rose.700" _hover={{ bg: "rose.50" }}>
+                    English / EN
+                  </Button>
+                ) : (
+                  <Link key={href} as={href.startsWith("/") ? NextLink : undefined} href={href}>{label}</Link>
+                )
               ))}
             </HStack>
           </Flex>

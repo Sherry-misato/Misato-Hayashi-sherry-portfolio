@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowBackIcon, ExternalLinkIcon } from "@chakra-ui/icons";
-import { Badge, Box, Container, Flex, Grid, Heading, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Badge, Box, Button, Container, Flex, Grid, Heading, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 const researchIntroJa =
@@ -26,7 +26,9 @@ export default function ResearchPage() {
             <HStack spacing={{ base: 3, md: 7 }} fontSize="sm">
               <Link as={NextLink} href="/activities">Activities</Link>
               <Link as={NextLink} href="/personal">Personal</Link>
-              <Link as={NextLink} href="/ja">Japanese</Link>
+              <Button as={NextLink} href="/ja" size="sm" variant="outline" borderColor="rose.300" color="rose.700" _hover={{ bg: "rose.50" }}>
+                {"\u65e5\u672c\u8a9e / JA"}
+              </Button>
             </HStack>
           </Flex>
         </Container>
@@ -87,9 +89,9 @@ export default function ResearchPage() {
             </Grid>
           ))}
         </Stack>
-        <Link mt={10} display="inline-block" href="https://iyatomi-lab.info/" isExternal color="rose.700" fontWeight="bold">
-          Iyatomi Laboratory <ExternalLinkIcon mx="2px" />
-        </Link>
+        <Button as="a" mt={10} href="https://iyatomi-lab.info/" target="_blank" rel="noreferrer" rightIcon={<ExternalLinkIcon />} size="lg" bg="rose.700" color="white" _hover={{ bg: "rose.500" }}>
+          Iyatomi Laboratory
+        </Button>
       </Container>
     </Box>
   );

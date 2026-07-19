@@ -20,7 +20,7 @@ import NextLink from "next/link";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPath = (path: string) => `${basePath}${path}`;
-const japaneseName = "\u6797 \u7f8e\u8070";
+const japaneseName = "\u6797 \u7f8e\u8061";
 const japaneseIntro =
   "\u6cd5\u653f\u5927\u5b66\u7b2c\u4e8c\u9ad8\u7b49\u5b66\u6821\u51fa\u8eab\u3002\u73fe\u5728\u306f\u6cd5\u653f\u5927\u5b66\u7406\u5de5\u5b66\u90e8\u5fdc\u7528\u60c5\u5831\u5de5\u5b66\u79d1\u306e\u5b66\u90e83\u5e74\u3068\u3057\u3066\u3001\u5f4c\u51a8\u7814\u7a76\u5ba4\u3067\u5b66\u3093\u3067\u3044\u307e\u3059\u3002";
 
@@ -58,7 +58,9 @@ export default function EnglishPage() {
               <Link as={NextLink} href="/research">Research</Link>
               <Link as={NextLink} href="/activities">Activities</Link>
               <Link as={NextLink} href="/personal">Personal</Link>
-              <Link as={NextLink} href="/ja">Japanese</Link>
+              <Button as={NextLink} href="/ja" size="sm" variant="outline" borderColor="rose.300" color="rose.700" _hover={{ bg: "rose.50" }}>
+                {"\u65e5\u672c\u8a9e / JA"}
+              </Button>
             </HStack>
           </Flex>
         </Container>

@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowBackIcon, ExternalLinkIcon } from "@chakra-ui/icons";
-import { Box, Container, Flex, Grid, Heading, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Grid, Heading, HStack, Link, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
 
@@ -68,7 +68,9 @@ export default function ActivitiesPage() {
             <HStack spacing={{ base: 3, md: 7 }} fontSize="sm">
               <Link as={NextLink} href="/research">Research</Link>
               <Link as={NextLink} href="/personal">Personal</Link>
-              <Link as={NextLink} href="/ja">Japanese</Link>
+              <Button as={NextLink} href="/ja" size="sm" variant="outline" borderColor="rose.300" color="rose.700" _hover={{ bg: "rose.50" }}>
+                {"\u65e5\u672c\u8a9e / JA"}
+              </Button>
             </HStack>
           </Flex>
         </Container>
@@ -96,9 +98,9 @@ export default function ActivitiesPage() {
                   <Heading as="h2" fontSize="xl" fontWeight="500">{item.title}</Heading>
                   <Text mt={2} color="gray.600" lineHeight="1.8">{item.text}</Text>
                 </Box>
-                <Link as={item.href.startsWith("/") ? NextLink : undefined} href={item.href} isExternal={!item.href.startsWith("/")} color="rose.700" fontWeight="bold" fontSize="sm">
-                  View <ExternalLinkIcon mx="2px" />
-                </Link>
+                <Button as={item.href.startsWith("/") ? NextLink : "a"} href={item.href} target={item.href.startsWith("/") ? undefined : "_blank"} rel={item.href.startsWith("/") ? undefined : "noreferrer"} rightIcon={<ExternalLinkIcon />} size="md" variant="outline" borderColor="rose.300" color="rose.700" justifySelf={{ base: "start", md: "end" }} _hover={{ bg: "rose.50" }}>
+                  View
+                </Button>
               </Grid>
             ))}
           </Stack>
@@ -117,6 +119,9 @@ export default function ActivitiesPage() {
                 <Text color="rose.700" fontSize="xs" letterSpacing=".14em" fontWeight="bold">VIDEO</Text>
                 <Heading as="h2" mt={3} fontSize="xl" fontWeight="500">HOSEI Museum Interview</Heading>
                 <Text mt={3} color="gray.600" lineHeight="1.8">Appeared in a HOSEI Museum interview about university life, challenges, and learning.</Text>
+                <Button mt={5} rightIcon={<ExternalLinkIcon />} size="md" bg="rose.700" color="white" _hover={{ bg: "rose.500" }}>
+                  Watch Video
+                </Button>
               </Box>
             </Box>
           </Link>
@@ -128,6 +133,9 @@ export default function ActivitiesPage() {
               <Text color="rose.700" fontSize="xs" letterSpacing=".14em" fontWeight="bold">OUTREACH</Text>
               <Heading as="h2" mt={3} fontSize="xl" fontWeight="500">SGX Baton Program</Heading>
               <Text mt={3} color="gray.600" lineHeight="1.8">Shared STEAM learning with younger students through scholarship-supported outreach activities.</Text>
+              <Button as="a" href="https://www.sony.com/ja/SonyInfo/diversity/steam-ex/" target="_blank" rel="noreferrer" mt={5} rightIcon={<ExternalLinkIcon />} size="md" bg="rose.700" color="white" _hover={{ bg: "rose.500" }}>
+                Open Official Site
+              </Button>
             </Box>
           </Box>
         </SimpleGrid>
