@@ -261,7 +261,7 @@ export default function Details() {
           {[
             ["Undergraduate", "Build a solid foundation in medical AI, statistics, and machine learning.", "医療AI・統計・機械学習の基礎を固め、腸内細菌叢データの解析に取り組む。"],
             ["Graduate School", "Present research internationally and turn ideas into papers.", "国際会議や論文発表に挑戦し、専門性を研究成果として形にする。"],
-            ["Future", "Build the ability to join leading international AI research environments, with DFKI as one possible future goal, and bring medical AI into real healthcare.", "将来的な目標のひとつとしてDFKIのような国際的なAI研究環境を目指し、健康寿命の延伸につながる医療AIを社会へ届ける。"],
+            ["Future", "Build the ability to contribute in global research environments and bring medical AI into real healthcare.", "海外でも活躍できる研究者を目指し、健康寿命の延伸につながる医療AIを社会へ届ける。"],
           ].map(([title, en, ja]) => (
             <Box key={title} bg="white" border="1px solid" borderColor="rose.200" borderRadius="8px" p={7}>
               <Text color="rose.700" fontWeight="bold">{title}</Text>
